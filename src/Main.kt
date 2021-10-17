@@ -18,4 +18,13 @@ fun main(){
     println(greetingFunction())
 
     //-------------------------------------------------------------//
+
+    val greetingFunction_1 : (String) -> String = { playerName ->
+        val currentYear = 2021
+        "Welcome to simVillage,$playerName! (copyright $currentYear)"
+
+    }
+    println(greetingFunction_1("Ibrahim"))
+
+    //------------------------------------------------------------//
 }
