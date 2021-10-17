@@ -46,4 +46,16 @@ fun main(){
     }
     println(greetingFunction_3("Ibrahim", 3))
 
+    //-------------------------------------------------------------//
+
+    val greetingFunction_4 = { playerName : String, numBuilding: Int ->
+
+        val currentYear = 2021
+        println("Adding $numBuilding houses")
+        "Welcome to SimVillage, $playerName! (copyright $currentYear)"
+    }
+    println(greetingFunction_4("Ibrahim", 5))
+
+    //--------------------------------------------------------//
+
 }
