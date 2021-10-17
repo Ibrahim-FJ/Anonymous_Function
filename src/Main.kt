@@ -82,9 +82,21 @@ fun main() {
 
 
     //-----------------------------------------------------------------------//
+
+    runSimulation_inline("Ibrahim to inline", greetingFunction_5)
+
 }
 
 fun runSimulation(playerName: String, greetingFunction_5: (String, Int) -> String) {
+    val numBuilding = Random.nextInt(1..3)
+    println(greetingFunction_5(playerName, numBuilding))
+}
+
+
+//------------------------------------------------------------------//
+
+
+inline fun runSimulation_inline(playerName: String, greetingFunction_5: (String, Int) -> String) {
     val numBuilding = Random.nextInt(1..3)
     println(greetingFunction_5(playerName, numBuilding))
 }
