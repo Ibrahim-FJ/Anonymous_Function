@@ -1,17 +1,22 @@
-fun main(){
-    val numletter = "Mississippi".count({letter ->
+import kotlin.random.Random
+import kotlin.random.nextInt
+
+fun main() {
+    val numletter = "Mississippi".count({ letter ->
         letter == 's'
     })
     println(numletter)
 
     //------------------------------------------------------------//
 
-    println({val currentYear = 2021
-    "Welcome to simVillage, Mayor! (copyright $currentYear)"}())
+    println({
+        val currentYear = 2021
+        "Welcome to simVillage, Mayor! (copyright $currentYear)"
+    }())
 
     //---------------------------------------------------------------//
 
-    val greetingFunction : () -> String = {
+    val greetingFunction: () -> String = {
         val currentYear = 2021
         "Welcome to simVillage, Mayor! (copyright $currentYear)"
     }
@@ -19,7 +24,7 @@ fun main(){
 
     //-------------------------------------------------------------//
 
-    val greetingFunction_1 : (String) -> String = { playerName ->
+    val greetingFunction_1: (String) -> String = { playerName ->
         val currentYear = 2021
         "Welcome to simVillage,$playerName! (copyright $currentYear)"
 
@@ -27,7 +32,7 @@ fun main(){
     println(greetingFunction_1("Ibrahim"))
 
     //------------------------------------------------------------//
-    val greetingFunction_2 : (String) -> String = {
+    val greetingFunction_2: (String) -> String = {
         val currentYear = 2021
         "Welcome to simVillage,$it! (copyright $currentYear)"
 
@@ -38,7 +43,7 @@ fun main(){
 
     //------------------------------------------------------//
 
-    val greetingFunction_3 : (String, Int) -> String = {playerName, numBuilding ->
+    val greetingFunction_3: (String, Int) -> String = { playerName, numBuilding ->
         val currentYear = 2021
         println("Adding $numBuilding hours")
         "Welcome to SimVillage, $playerName! (copyright $currentYear)"
@@ -48,7 +53,7 @@ fun main(){
 
     //-------------------------------------------------------------//
 
-    val greetingFunction_4 = { playerName : String, numBuilding: Int ->
+    val greetingFunction_4 = { playerName: String, numBuilding: Int ->
 
         val currentYear = 2021
         println("Adding $numBuilding houses")
@@ -58,4 +63,21 @@ fun main(){
 
     //--------------------------------------------------------//
 
+    val greetingFunction_5 = { playerName: String, numBuilding: Int ->
+        val currentYear = 2021
+        println("Adding $numBuilding houses")
+        "Welcome to SimVillage, $playerName! (copyright $currentYear)"
+
+    }
+
+    runSimulation("Ibrahim from runSimulation", greetingFunction_5)
+
+    //----------------------------------------------------------------//
+
+
+}
+
+fun runSimulation(playerName: String, greetingFunction_5: (String, Int) -> String) {
+    val numBuilding = Random.nextInt(1..3)
+    println(greetingFunction_5(playerName, numBuilding))
 }
