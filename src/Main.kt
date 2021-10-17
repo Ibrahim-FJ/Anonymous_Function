@@ -54,7 +54,7 @@ fun main(){
         println("Adding $numBuilding houses")
         "Welcome to SimVillage, $playerName! (copyright $currentYear)"
     }
-    println(greetingFunction_4("Ibrahim", 5))
+    println(greetingFunction_4("Ibrahim", 6))
 
     //--------------------------------------------------------//
 
