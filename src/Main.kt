@@ -95,7 +95,7 @@ fun main() {
 
     //-------------------------------------------------------------------//
 
-
+    runSimulation_Function_type()
 }
 
 
@@ -128,3 +128,20 @@ fun printConstructionCost(numBuildings: Int) {
     val cost = 500
     println("construction cost: ${cost * numBuildings}")
 }
+
+fun runSimulation_Function_type() {
+    val greetingFunction = configureGreetingFunction()
+    println(greetingFunction("ibrahim"))
+}
+
+fun configureGreetingFunction(): (String) -> String {
+    val structureType = "hospitals"
+    var numBuildings = 5
+    return { playerName: String ->
+        val currentYear = 2018
+        numBuildings += 1
+        println("Adding $numBuildings $structureType")
+        "Welcome to SimVillage, $playerName! (copyright $currentYear)"
+    }
+}
+
