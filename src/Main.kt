@@ -85,7 +85,20 @@ fun main() {
 
     runSimulation_inline("Ibrahim to inline", greetingFunction_5)
 
+    //------------------------------------------------------------------//
+
+    runSimulation_reference("ibrahim_Function References", ::printConstructionCost) { playerName, numBuildings ->
+        val currentYear = 2021
+        println("Adding $numBuildings houses")
+        "Welcome to SimVillage, $playerName! (copyright $currentYear)"
+    }
+
+    //-------------------------------------------------------------------//
+
+
 }
+
+
 
 fun runSimulation(playerName: String, greetingFunction_5: (String, Int) -> String) {
     val numBuilding = Random.nextInt(1..3)
@@ -99,4 +112,19 @@ fun runSimulation(playerName: String, greetingFunction_5: (String, Int) -> Strin
 inline fun runSimulation_inline(playerName: String, greetingFunction_5: (String, Int) -> String) {
     val numBuilding = Random.nextInt(1..3)
     println(greetingFunction_5(playerName, numBuilding))
+}
+
+inline fun runSimulation_reference(
+    playerName: String,
+    costPrinter: (Int) -> Unit,
+    greetingFunction: (String, Int) -> String
+) {
+    val numBuildings = Random.nextInt(1..3)
+    costPrinter(numBuildings)
+    println(greetingFunction(playerName, numBuildings))
+}
+
+fun printConstructionCost(numBuildings: Int) {
+    val cost = 500
+    println("construction cost: ${cost * numBuildings}")
 }
