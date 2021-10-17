@@ -27,4 +27,15 @@ fun main(){
     println(greetingFunction_1("Ibrahim"))
 
     //------------------------------------------------------------//
+    val greetingFunction_2 : (String) -> String = {
+        val currentYear = 2021
+        "Welcome to simVillage,$it! (copyright $currentYear)"
+
+    }
+
+    println(greetingFunction_2("Ibrahim"))
+
+
+    //------------------------------------------------------//
+
 }
