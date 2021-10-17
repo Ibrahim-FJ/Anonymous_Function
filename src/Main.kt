@@ -3,4 +3,11 @@ fun main(){
         letter == 's'
     })
     println(numletter)
+
+    //------------------------------------------------------------//
+
+    println({val currentYear = 2021
+    "Welcome to simVillage, Mayor! (copyright $currentYear)"}())
+
+
 }
